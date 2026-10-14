@@ -1,0 +1,432 @@
+:root{
+ --primary: #0B4F6C;
+ --secondary: #20A4A8;
+ --accent: #FF6B4A;
+ --background: #FAF7F2;
+ --surface: #FFFFFF;
+ --mist: #E8F1F2;
+ --text: #14213D;
+}
+
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+ background: var(--background);
+ color: var(--text);
+ line-height: 1.6;
+}
+
+/* Hero Section */
+.hero{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 50px;
+ padding: 80px 8%;
+ background: linear-gradient(135deg, var(--primary), var(--secondary));
+ color: white;
+}
+
+.hero-image img{
+ width: 260px;
+ height: 260px;
+ object-fit: cover;
+ border-radius: 50%;
+ border: 6px solid white;
+ box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.hero-content{
+ max-width: 600px;
+}
+
+.hero-content h1{
+ font-size: 3.2rem;
+ letter-spacing: 2px;
+ margin-bottom: 10px;
+}
+
+.hero-content h1::after{
+ content: "";
+ display: block;
+ width: 80px;
+ height: 5px;
+ background: var(--accent);
+ border-radius: 5px;
+ margin-top: 12px;
+}
+
+.subtitle{
+ font-size: 1.2rem;
+ font-weight: 600;
+ margin: 15px 0;
+ opacity: 0.95;
+}
+
+/* Layout */
+.container{
+ width: 85%;
+ margin: 50px auto;
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+ gap: 25px;
+}
+
+.full-width{
+ width: 85%;
+ margin: 50px auto;
+}
+
+/* Cards */
+.card{
+ background: var(--surface);
+ padding: 30px;
+ border-radius: 15px;
+ box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+ border-top: 5px solid var(--secondary);
+}
+
+.card h2{
+ color: var(--primary);
+ margin-bottom: 15px;
+}
+
+.card ul{
+ padding-left: 20px;
+}
+
+.card li{
+ margin-bottom: 8px;
+}
+
+.card a{
+ color: var(--primary);
+ font-weight: 600;
+ text-decoration: none;
+ transition: 0.3s;
+}
+
+.card a:hover{
+ color: var(--accent);
+}
+
+/* Personal Information */
+.info-grid{
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+ gap: 15px;
+}
+
+.info-box{
+ background: var(--mist);
+ padding: 15px;
+ border-radius: 10px;
+ border-left: 4px solid var(--secondary);
+ box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+ transition: transform 0.3s ease,
+             box-shadow 0.3s ease,
+             background-color 0.3s ease,
+             border-color 0.3s ease;
+}
+
+.info-box:hover{
+ transform: translateY(-6px);
+ background: var(--surface);
+ border-left-color: var(--accent);
+ box-shadow: 0 12px 25px rgba(11,79,108,0.18);
+}
+
+.info-box h4{
+ color: var(--primary);
+ font-size: 0.9rem;
+ text-transform: uppercase;
+ letter-spacing: 1px;
+ margin-bottom: 5px;
+ transition: color 0.3s ease;
+}
+
+.info-box:hover h4{
+ color: var(--accent);
+}
+
+/* Interests */
+.interest-grid{
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+ gap: 15px;
+}
+
+.interest-box{
+ background: var(--mist);
+ color: var(--primary);
+ text-align: center;
+ font-weight: 600;
+ padding: 18px;
+ border-radius: 12px;
+ cursor: pointer;
+ box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+ transition: transform 0.3s ease,
+             box-shadow 0.3s ease,
+             background-color 0.3s ease,
+             color 0.3s ease;
+}
+
+.interest-box:hover{
+ background: var(--primary);
+ color: white;
+ transform: translateY(-5px) scale(1.05);
+ box-shadow: 0 12px 25px rgba(11,79,108,0.3);
+}
+
+.interest-box:active{
+ transform: translateY(-2px) scale(1.02);
+ box-shadow: 0 6px 12px rgba(11,79,108,0.25);
+}
+
+/* Fun Facts */
+.facts-grid{
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+ gap: 20px;
+}
+
+.fact-box{
+ background: var(--mist);
+ padding: 20px;
+ border-radius: 12px;
+ border-bottom: 4px solid var(--accent);
+}
+
+.fact-box h3{
+ color: var(--primary);
+ margin-bottom: 8px;
+ font-size: 1.1rem;
+}
+
+/* Footer */
+footer{
+ background: var(--primary);
+ color: white;
+ text-align: center;
+ padding: 25px;
+ margin-top: 50px;
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce){
+ .info-box,
+ .interest-box{
+  transition: none;
+ }
+
+ .info-box:hover,
+ .interest-box:hover,
+ .interest-box:active{
+  transform: none;
+ }
+}
+
+/* Responsive */
+@media (max-width: 768px){
+ .hero{
+  flex-direction: column;
+  text-align: center;
+  padding: 50px 6%;
+ }
+
+ .hero-content h1{
+  font-size: 2.3rem;
+ }
+
+ .hero-content h1::after{
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ .hero-image img{
+  width: 200px;
+  height: 200px;
+ }
+}
+
+/* ===== Places I Want to Visit ===== */
+.section-intro{
+ margin-bottom: 20px;
+ opacity: 0.8;
+}
+
+.destination-grid{
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+ gap: 25px;
+}
+
+.destination-card{
+ position: relative;
+ display: block;
+ height: 320px;
+ border-radius: 15px;
+ overflow: hidden;
+ text-decoration: none;
+ color: white;
+ box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+ transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destination-card img{
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ display: block;
+ transition: transform 0.5s ease;
+}
+
+.destination-overlay{
+ position: absolute;
+ inset: 0;
+ display: flex;
+ flex-direction: column;
+ justify-content: flex-end;
+ padding: 25px;
+ background: linear-gradient(to top, rgba(11,79,108,0.85), rgba(11,79,108,0) 60%);
+}
+
+.destination-overlay h3{
+ font-size: 1.8rem;
+ margin-bottom: 5px;
+ color:#fff;
+ transition: color 0.3s ease;
+}
+
+.destination-overlay span{
+ font-weight: 600;
+ color: #fff;
+ border-bottom: 2px solid var(--accent);
+ align-self: flex-start;
+ padding-bottom: 2px;
+ transition: padding-left 0.3s ease;
+}
+
+.destination-card:hover,
+.destination-card:focus-visible{
+ transform: translateY(-6px);
+ box-shadow: 0 15px 30px rgba(11,79,108,0.3);
+}
+
+.destination-card:hover img,
+.destination-card:focus-visible img{
+ transform: scale(1.08);
+}
+
+.destination-card:hover .destination-overlay span{
+ padding-left: 8px;
+ color: orange;
+}
+
+/* ===== Destination pages (taiwan.html / vietnam.html) ===== */
+.page-hero{
+ height: 60vh;
+ min-height: 340px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+ color: white;
+ padding: 0 8%;
+ background-size: cover;
+ background-position: center;
+}
+
+.taiwan-hero{
+ background-image: linear-gradient(rgba(11,79,108,0.55), rgba(11,79,108,0.55)), url("images/taiwan.jpg");
+}
+
+.vietnam-hero{
+ background-image: linear-gradient(rgba(11,79,108,0.55), rgba(11,79,108,0.55)), url("images/vietnam.jpg");
+}
+
+.page-hero h1{
+ font-size: 3.5rem;
+ margin-bottom: 10px;
+}
+
+.page-hero p{
+ font-size: 1.2rem;
+ max-width: 650px;
+}
+
+.highlight-grid{
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+ gap: 20px;
+}
+
+.highlight-box{
+ background: var(--mist);
+ padding: 20px;
+ border-radius: 12px;
+ border-bottom: 4px solid var(--accent);
+ transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.highlight-box:hover{
+ transform: translateY(-5px);
+ box-shadow: 0 10px 20px rgba(11,79,108,0.18);
+}
+
+.highlight-box h3{
+ color: var(--primary);
+ margin-bottom: 8px;
+ font-size: 1.1rem;
+}
+
+.btn{
+ display: inline-block;
+ text-decoration: none;
+ background: var(--accent);
+ color: #14213D;
+ font-weight: 700;
+ padding: 14px 30px;
+ border-radius: 30px;
+ margin: 0 8px 8px 0;
+ transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover{
+ transform: translateY(-3px);
+ box-shadow: 0 8px 18px rgba(255,107,74,0.4);
+}
+
+.btn-outline{
+ background: transparent;
+ color: var(--primary);
+ border: 2px solid var(--primary);
+}
+
+@media (prefers-reduced-motion: reduce){
+ .destination-card,
+ .destination-card img,
+ .highlight-box,
+ .btn{
+  transition: none;
+ }
+
+ .destination-card:hover,
+ .destination-card:hover img,
+ .highlight-box:hover,
+ .btn:hover{
+  transform: none;
+ }
+}
+
+@media (max-width: 768px){
+ .page-hero h1{
+  font-size: 2.4rem;
+ }
+}
